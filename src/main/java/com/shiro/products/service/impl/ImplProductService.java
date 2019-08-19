@@ -1,4 +1,4 @@
-package com.shiro.products.service;
+package com.shiro.products.service.impl;
 
 import com.shiro.products.model.entity.Product;
 
