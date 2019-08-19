@@ -20,6 +20,12 @@ public class ProductController {
         return this.productService.findAll();
     }
 
+    @GetMapping("/detail")
+    public Product productById(@RequestParam(name = "id") Long id) {
+        return this.productService.findById(id);
+    }
+
+
 
 
 }
