@@ -1,6 +1,38 @@
 spring:
   application:
     name: product-service
+
+  output:
+    ansi:
+      enabled: always
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:file:~/product
+    driver-class-name: org.h2.Driver
+
+logging:
+  level:
+    com:
+      shiro: debug
+    org:
+      hibernate:
+        SQL: debug
+        type:
+          descriptior:
+            sql:
+              BasicBinder: trace
+  pattern:
+    console: "%clr(${LOG_LEVEL_PATTERN:%5p})  %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+
 server:
   port: 8000
-

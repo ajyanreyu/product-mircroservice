@@ -20,7 +20,7 @@ public class ProductController {
         return this.productService.findAll();
     }
 
-    @GetMapping("/detail")
+    @GetMapping("/details")
     public Product productById(@RequestParam(name = "id") Long id) {
         return this.productService.findById(id);
     }
