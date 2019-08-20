@@ -34,5 +34,12 @@ logging:
   pattern:
     console: "%clr(${LOG_LEVEL_PATTERN:%5p})  %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.intance_id:${random.value}}
+
 server:
-  port: 8000
+  port: ${PORT:0} # the application automatically assigns an available port
